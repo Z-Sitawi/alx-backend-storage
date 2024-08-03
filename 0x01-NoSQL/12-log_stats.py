@@ -13,5 +13,7 @@ methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
 print(f'{nbr_docs_in_nginx} logs')
 print('Methods:')
 for method in methods:
-    print(f'\tmethod {method}: {nginx_collection.count_documents({"method": method})}')
-print(f'{nginx_collection.count_documents({"method": "GET", "path": "/status"})} status check')
+    print(f'\tmethod {method}: '
+          f'{nginx_collection.count_documents({"method": method})}')
+obj = {"method": "GET", "path": "/status"}
+print(f'{nginx_collection.count_documents(obj)} status check')
