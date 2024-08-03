@@ -4,6 +4,7 @@ A script that provides some stats about Nginx logs stored in MongoDB
 """
 from pymongo import MongoClient
 
+
 client = MongoClient('mongodb://127.0.0.1:27017')
 nginx_collection = client.logs.nginx
 nbr_docs_in_nginx = nginx_collection.count_documents({})
